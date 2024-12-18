@@ -1,0 +1,49 @@
+/*Menu hamburguesa*/
+
+.navPag ul{
+    display: none;
+    background-color: beige;
+    margin: 0;
+}
+
+.navPag input:checked  ~ ul{
+    display:block;
+}
+
+.navPag input {
+    display: none;
+}
+
+header label {
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 5px;
+}
+
+.navPag ul li {
+    display: block;
+    background: white;
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+    border-bottom: 1px solid white;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 0.3px;
+    text-align: center;
+}
+
+.navPag ul li:hover {
+    background-color: rgb(192, 192, 192);
+}
+
+.navPag ul li a {
+    width: 100%;
+    height: 100%;
+}

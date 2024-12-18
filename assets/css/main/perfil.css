@@ -1,0 +1,57 @@
+/*----------------------------------------------------------------------------- 
+    OPCIONES DE PERFIL
+-----------------------------------------------------------------------------*/
+
+div.navPerfil {
+    background-color: beige;
+    height: 100%;
+    width: 60%;
+    position: fixed; 
+    left: 100%; 
+    top: 0; 
+    transition: left 0.5s; 
+    z-index: 20; 
+    display: grid;
+    grid-template-rows: 10% auto;
+    border-left: solid 0.5px;
+}
+
+div.navPerfil h3{
+    text-align: center;
+}
+
+div.navPerfil ul{
+    list-style: none;
+    margin-right: 20%;
+}
+
+div.navPerfil li {
+    text-align: center;
+    padding: 5px;
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: solid #C3A78D;
+}
+
+div.navPerfil span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 28px;
+}
+
+@media (min-width: 768px) { 
+    div.navPerfil {
+        background-color: beige;
+        height: 100%;
+        width: 400px;
+        position: fixed; 
+        right: -400px;
+        top: 0; 
+        z-index: 20; 
+        display: grid;
+        grid-template-rows: 10% auto;
+        border-left: solid 0.5px;
+    }
+}

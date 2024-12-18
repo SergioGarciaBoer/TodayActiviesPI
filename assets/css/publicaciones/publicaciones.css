@@ -1,0 +1,96 @@
+/* Div de todas las publicaciones */
+
+div.publicaciones{
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-color: white;
+    margin-top: 15px;
+}
+
+div.publicaciones div{
+    width: 80vw;
+    background-color: beige;
+    border-radius: 15px;
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.publicaciones div label{
+    border: none;
+    width: 100%;
+    background-color: beige;
+    color: black;
+    height: 100%;
+    border-radius: 15px;
+    font-size: 4rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.publicaciones div label:hover{
+    background-color: #C3A78D;
+}
+
+div.publicaciones div input{
+    display: none;
+}
+
+.card{
+    margin: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    object-position: center; 
+}
+
+/*Editar*/
+#miModal input[type="text"],
+#miModal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#miModal input[type="text"]:focus,
+#miModal textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+#miModal textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+#miModal .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#miModal .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.error{
+    color: red;
+    font-weight: bolder
+}

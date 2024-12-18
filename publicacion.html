@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Publicaciones</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/main/header.css">
+    <link rel="stylesheet" href="./assets/css/main/burguerMenu.css">
+    <link rel="stylesheet" href="./assets/css/main/perfil.css">
+    <link rel="stylesheet" href="./assets/css/publicaciones/publicaciones.css">
+    <link rel="stylesheet" href="./assets/css/publicaciones/generarPublicacion.css">
+</head>
+<body>
+    <header>
+        <label for="menu"> ☰ </label>
+        <h1>Titulo</h1>
+        <button id="perfil">Perfil</button>
+    </header>
+
+    <nav class="navPag">
+        <input type="checkbox" id="menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobreNosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="navPerfil" id="navPerfil">
+        <span id="closePerfil" class="closePerfil">&times;</span>
+        <h3 id="nombreUsuarioPerfil">Today Activies</h3>
+        <ul>
+            <li><a href="editarPerfil.html">Editar perfil</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li id="sesionCierre">Cerrar Sesion</li>
+        </ul>
+    </div>
+
+    <div id="todasPublicaciones" class="container mt-4">
+
+    </div>
+
+    <div id="formCrearPublis" class="publicaciones">
+        <div>
+            <label for="cBPublis">+</label>
+            <input id="cBPublis" type="checkbox">
+        </div>
+    </div>
+
+    <div id="ocultarCrear" class="ocultarCrear">
+        <div class="crearPubli" id="crearPubli">
+            <input id="nombrePubli" type="text" placeholder="Nombre del sitio">
+            <div class="datosPublicacion" id="datosPublicacion">
+                <label for="descargarImagen" class="upload-label">
+                    Selecciona una imagen
+                </label>
+                <input type="file" id="descargarImagen" accept="image/*" multiple>
+                <div id="verImagenes"></div>
+            </div> 
+            <textarea id="descripcion" placeholder="Escribe aquí la descripción..."></textarea>
+            <div class="checkbox-group">
+                <input value="1" type="radio" name="categoria" id="restauranteCB" checked>
+                <label for="restauranteCB">Restaurante</label>
+            </div>
+            <div class="checkbox-group">
+                <input value="2" type="radio" name="categoria" id="hotelesCB">
+                <label for="hotelesCB">Hotel</label>
+            </div>
+            <div class="checkbox-group">
+                <input value="3" type="radio" name="categoria" id="actividadesFisicaCB">
+                <label for="actividadesFisicaCB">Actividad física</label>
+            </div>
+            <div class="checkbox-group">
+                <input value="4" type="radio" name="categoria" id="actividadesCulturalesCB">
+                <label for="actividadesCulturalesCB">Actividades culturales</label>
+            </div>
+            <select id="provinciaSelect" class="form-select" aria-label="Default select example">
+                <option value="1">Almeria</option>
+                <option value="2">Cadiz</option>
+                <option value="3">Cordoba</option>
+                <option value="4">Granada</option>
+                <option value="5">Huelva</option>
+                <option value="6">Jaen</option>
+                <option value="7">Malaga</option>
+                <option value="8">Sevilla</option>
+              </select>
+            <button id="btnSubirPubli">Crear publicación</button>
+            <div id="msg-error-crearPubli"></div>
+        </div>    
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/api.js"></script>
+<script src="./assets/js/declaraciones.js"></script>
+<script src="./assets/js/publicaciones.js"></script>
+<script src="./assets/js/perfil.js"></script>
+</html>

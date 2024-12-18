@@ -1,0 +1,194 @@
+/* Modal - inicialmente oculto */
+.modalPubli {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.3s ease;
+}
+
+.contenido-modalPubli {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 95%;
+    max-width: 800px;
+    max-height: 90%;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+div.textoPubli p{
+    text-align: center;
+}
+
+div.contenedor-media p {
+    text-align: center;
+    color: orange;
+    font-weight: bolder
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+}
+
+.galeria-contenedor {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+    gap: 15px;
+    justify-content: center;
+}
+
+.imgPubli {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Valoracion*/
+.rating-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+    flex-wrap: wrap; 
+}
+
+
+.rating-title {
+    font-size: 18px;
+    color: #333;
+}
+
+.rating-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.rating-btn {
+    font-size: 20px;
+    padding: 8px 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.rating-btn:hover {
+    background-color: #d1b894;
+    transform: scale(1.1);
+}
+
+.rating-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilos de comentarios */
+.boton-comentarios {
+    background-color: #C3A78D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-comentarios:hover {
+    background-color: #A6896C;
+}
+
+.formulario-comentario {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+textarea:focus {
+    border-color: #C3A78D;
+}
+
+#boton-enviar-comentario {
+    background-color: #C3A78D;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#boton-enviar-comentario:hover {
+    background-color: #A6896C;
+}
+
+.lista-comentarios {
+    margin-top: 20px;
+    height: 400px;
+    overflow-y: auto;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+.bien{
+    color: greenyellow;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Estilos Responsivos */
+@media (min-width: 460px) and (max-width: 631px) {
+    .contenido-modalPubli {
+        width: 90%;
+    }
+}
+
+@media (min-width: 632px) and (max-width: 767px) {
+    .contenido-modalPubli {
+        width: 80%;
+    }
+}

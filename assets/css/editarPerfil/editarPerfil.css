@@ -1,0 +1,92 @@
+.contenedor-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contenedor-editarPerfil {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px; 
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form {
+    text-align: center;
+}
+
+.formulario-editarPerfil {
+    margin-bottom: 15px;
+}
+
+.formulario-editarPerfil label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.formulario-editarPerfil input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.formulario-editarPerfil input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.formulario-editarPerfil .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.form button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background-color: #0056b3;
+}
+
+.alerta {
+    color: red;
+    font-weight: bolder;
+}
+
+.bien {
+    color: greenyellow;
+    font-weight: bolder;
+}
+
+@media (min-width: 768px) {
+    .contenedor-editarPerfil {
+        flex-direction: row; 
+        justify-content: space-between;
+        height: auto;
+    }
+
+    .form {
+        width: 48%;
+    }
+
+    .contenedor-editarPerfil {
+        max-width: 700px;
+    }
+}

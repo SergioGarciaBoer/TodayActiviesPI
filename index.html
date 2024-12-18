@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./assets/js/api.js"></script>
+    <title>Today Activies</title>
+    <link rel="stylesheet" href="./assets/css/main/header.css">
+    <link rel="stylesheet" href="./assets/css/main/burguerMenu.css">
+    <link rel="stylesheet" href="./assets/css/main/actividades.css">
+    <link rel="stylesheet" href="./assets/css/main/ciudades.css">
+    <link rel="stylesheet" href="./assets/css/main/modalSesiones.css">
+    <link rel="stylesheet" href="./assets/css/main/perfil.css">
+    <link rel="stylesheet" href="./assets/css/main/inicio.css">
+    <link rel="stylesheet" href="./assets/css/main/publicacionModal.css">
+    <link rel="stylesheet" href="./assets/css/main/comentarios.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+<header>
+    <label for="menu"> ☰ </label>
+    <h1>Today Activies</h1>
+    <button id="inicioSes">Iniciar Sesión</button>
+    <button id="perfil">Perfil</button>
+</header>
+
+<nav class="navPag">
+    <input type="checkbox" id="menu">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sobreNosotros.html">Sobre nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+</nav>
+
+<div class="navPerfil" id="navPerfil">
+    <span id="closePerfil" class="closePerfil">&times;</span>
+    <h3 id="nombreUsuarioPerfil">Usuario</h3>
+    <ul>
+        <li><a href="editarPerfil.html">Editar perfil</a></li>
+        <li id="publicaciones"><a href="publicacion.html">Publicaciones</a></li>
+        <li id="sesionCierre">Cerrar Sesion</li>
+    </ul>
+</div>
+
+<div class="categorias-radios">
+    <input type="radio" name="experiencias" id="todos" value="todos">
+    <input type="radio" name="experiencias" id="hoteles" value="2">
+    <input type="radio" name="experiencias" id="restaurantes" value="1">
+    <input type="radio" name="experiencias" id="actividades-accion" value="3">
+    <input type="radio" name="experiencias" id="actividades" value="4">
+</div>
+
+<nav class="navCat">
+    <ul>
+        <li class="active"><label for="todos">Todos</label></li>
+        <li><label for="hoteles">Hoteles</label></li>
+        <li><label for="restaurantes">Restaurantes</label></li>
+        <li><label for="actividades-accion">Actividades acción</label></li>
+        <li><label for="actividades">Actividades</label></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <select name="ciudad" id="ciudad">
+        <option value="default">Elige la ciudad</option>
+        <option value="1">Almería</option>
+        <option value="2">Cádiz</option>
+        <option value="3">Córdoba</option>
+        <option value="4">Granada</option>
+        <option value="5">Huelva</option>
+        <option value="6">Jaen</option>
+        <option value="7">Málaga</option>
+        <option value="8">Sevilla</option>
+    </select>
+</div>
+<div class="buscador">
+    <input id="buscador" class="form-control me-2" type="search" placeholder="Buscar publicaciones..." aria-label="Search">
+    <button id="botonFiltros" class="btn btn-primary" type="submit">Buscar</button>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <div class="container-botones">
+            <input name="iniciarSesionCB" id="iniciarSesionCB" type="checkbox" checked>
+            <label for="iniciarSesionCB">Iniciar Sesion</label>
+
+            <input name="registroCB" id="registroCB" type="checkbox">
+            <label for="registroCB">Registro</label>
+        </div>
+        <span id="closeModal" class="close">&times;</span>
+
+        <div class="sesion" id="divInicioSesion">
+            <label for="usuario">Usuario</label>
+            <input type="text" name="usuario" id="sesionNick">
+
+            <label for="contraseña">Contraseña</label>
+            <input type="password" name="contraseña" id="sesionContrasena">
+
+            <button id="btnSesion">Iniciar Sesion</button>
+
+            <label for="gmailOlvido">Escribe tu gmail</label>
+            <input type="email" name="gmailOlvido" id="gmailOlvido">
+
+            <button id="btnContraOlvido">Obtener nueva contraseña</button>
+        </div>
+        <div class="registro" id="divRegistro">
+            <label for="usuario">Usuario</label>
+            <input type="text" name="usuario" id="registroNick">
+
+            <label for="contraseña">Contraseña</label>
+            <input type="password" name="contraseña" id="registroContrasena">
+
+            <label for="gmail">Gmail</label>
+            <input type="email" name="gmail" id="registroGmail">
+
+            <button id="btnRegistro">Resgistrarse</button>
+        </div>
+        <div class="error" id="msg-error-sesion"></div>
+    </div>
+</div>
+
+<div id="publicacionBuscadas" class="divPublicacionesBuscadas">
+
+</div>
+
+<div class="paginacion" id="divPaginacion">
+
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/declaraciones.js"></script>
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/sesiones.js"></script>
+<script src="./assets/js/perfil.js"></script>
+<script src="./assets/js/cargarPublicacionesInicio.js"></script>
+<script src="./assets/js/cargarPublicacionesBusqueda.js"></script>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Contacto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/main/header.css">
+    <link rel="stylesheet" href="./assets/css/main/burguerMenu.css">
+    <link rel="stylesheet" href="./assets/css/main/modalSesiones.css">
+    <link rel="stylesheet" href="./assets/css/main/perfil.css">
+    <link rel="stylesheet" href="./assets/css/contacto/contacto.css">
+</head>
+<body>
+    <header>
+        <label for="menu"> ☰ </label>
+        <h1>Today Activies</h1>
+        <button id="inicioSes">Iniciar Sesion</button>
+        <button id="perfil">Perfil</button>
+    </header>
+
+    <nav class="navPag">
+        <input type="checkbox" id="menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobreNosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="navPerfil" id="navPerfil">
+        <span id="closePerfil" class="closePerfil">&times;</span>
+        <h3 id="nombreUsuarioPerfil">Usuario</h3>
+        <ul>
+            <li><a href="editarPerfil.html">Editar perfil</a></li>
+            <li id="publicaciones"><a href="publicacion.html">Publicaciones</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li id="sesionCierre">Cerrar Sesion</li>
+        </ul>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="container-botones">
+                <input name="iniciarSesionCB" id="iniciarSesionCB" type="checkbox" checked>
+                <label for="iniciarSesionCB">Iniciar Sesion</label>
+
+                <input name="registroCB" id="registroCB" type="checkbox">
+                <label for="registroCB">Registro</label>
+            </div>
+            <span id="closeModal" class="close">&times;</span>
+            
+            <div class="sesion" id="divInicioSesion">
+                <label for="usuario">Usuario</label>
+                <input type="text" name="usuario" id="sesionNick">
+
+                <label for="contraseña">Contraseña</label>
+                <input type="password" name="contraseña" id="sesionContrasena">
+
+                <button id="btnSesion">Iniciar Sesion</button>
+
+                <label for="gmailOlvido">Escribe tu gmail</label>
+                <input type="email" name="gmailOlvido" id="gmailOlvido">
+
+                <button id="btnContraOlvido">Obtener nueva contraseña</button>
+            </div>
+            <div class="registro" id="divRegistro">
+                <label for="usuario">Usuario</label>
+                <input type="text" name="usuario" id="registroNick">
+
+                <label for="contraseña">Contraseña</label>
+                <input type="password" name="contraseña" id="registroContrasena">
+
+                <label for="gmail">Gmail</label>
+                <input type="email" name="gmail" id="registroGmail">
+
+                <button id="btnRegistro">Resgistrarse</button>
+            </div>
+            <div class="error" id="msg-error-sesion"></div>
+        </div>
+    </div>
+
+    <div class="contacto">
+        <div class="contacto-div gmail">
+            <div class="icono">📧</div>
+            <p>Correo electrónico:</p>
+            <p><a href="mailto:TodayActivies@gmail.com" style="color: white; text-decoration: none;">TodayActivies@gmail.com</a></p>
+        </div>
+
+        <div class="contacto-div telefono">
+            <div class="icono">📞</div>
+            <p>Teléfono:</p>
+            <p><a style="color: white; text-decoration: none;">+34 123 456 789</a></p>
+        </div>
+
+        <div class="contacto-div instagram">
+            <div class="icono">📸</div>
+            <p>Instagram:</p>
+            <p><a href="https://www.instagram.com/ejemplo" style="color: white; text-decoration: none;">@ejemplo</a></p>
+        </div>
+    </div>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/api.js"></script>
+<script src="./assets/js/declaraciones.js"></script>
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/sesiones.js"></script>
+<script src="./assets/js/perfil.js"></script>
+
+<script>
+    addEventListener('DOMContentLoaded', () =>{
+        peticion.accion = 'sesionAuto';
+        postData('./php/sesiones.php', {
+        data:peticion
+    }).then((data) => {
+        console.log(data);
+        if(data.status == 'ok'){
+            btnSesionPrinc.style.display = 'none';
+            perfil.style.display = 'block';
+            modal.style.display = 'none';
+            document.getElementById('nombreUsuarioPerfil').innerHTML = data.usuario.nick;
+        }
+    });
+    });
+</script>
+</html>

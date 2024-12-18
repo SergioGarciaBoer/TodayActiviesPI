@@ -1,0 +1,43 @@
+/*----------------------------*/
+/*Actividades*/
+
+.navCat {
+    overflow-x: auto; 
+    white-space: nowrap; 
+    background-color: beige; 
+}
+
+.navCat ul {
+    display: flex;
+    padding: 0;
+    margin: 0; 
+    list-style: none;
+    align-items: center;
+}
+
+.navCat li {
+    padding: 15px 20px; 
+    cursor: pointer; 
+    white-space: nowrap;
+}
+
+.navCat li:hover {
+    background-color: lightgray; 
+}
+
+div.categorias-radios{
+    display: none;
+}
+
+.navCat li.active {
+    background-color: lightblue; 
+    font-weight: bold; 
+}
+
+@media (min-width: 601px){
+
+    .navCat ul {
+        justify-content: center;
+    }
+  
+}

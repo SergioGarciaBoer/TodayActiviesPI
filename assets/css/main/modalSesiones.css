@@ -1,0 +1,142 @@
+/* Modal */
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex; 
+    flex-direction: column;
+    gap: 20px; 
+    height: 550px;
+}
+
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    justify-self: end;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+}
+
+.container-botones{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.modal .modal-content .container-botones input{
+    display: none;
+}
+
+.modal-content div#divRegistro{
+    display: none;
+}
+
+.modal .modal-content .container-botones label{
+    border: solid 1px;
+    padding: 2px;
+    text-align: center;
+    align-self: center;
+    border-radius: 7px;
+    margin: 3px;
+}
+
+.modal .modal-content .container-botones input:checked + label{
+    padding: 2px;
+    text-align: center;
+    align-self: center;
+    border-radius: 7px;
+    background-color: beige;
+}
+
+.modal .modal-content .container-botones input:checked{
+    border: solid;
+    text-align: center;
+    align-self: center;
+    border-radius: 7px;
+}
+
+.modal-content .sesion label, .modal-content .registro label{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.modal-content .sesion input, .modal-content .registro input{
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 20px;
+    border: 1px solid #D1B894; 
+    border-radius: 5px;
+    background-color: #FFF8E7; 
+    color: #6B4226;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.modal-content .sesion input:focus, .modal-content .registro input:focus{
+    border-color: #C3A78D;
+}
+
+.modal-content .sesion button, .modal-content .registro button{
+    width: 100%;
+    padding: 12px;
+    background-color: #C3A78D; 
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content .sesion button:hover, .modal-content .registro button:hover{
+    background-color: #A6896C; 
+}
+
+
+@media (min-width: 460px) and (max-width: 631px) {
+
+    div.modal div.modal-content{
+        width: 90%;
+        margin-left: 5%;
+    }
+  
+}
+
+@media (min-width: 632px) and (max-width: 767px) {
+
+    div.modal div.modal-content{
+        width: 80%;
+        margin-left: 10%;
+    }
+  
+}
+
+@media (min-width: 768px) {
+
+    div.modal div.modal-content{
+        width: 700px;
+    }
+  
+}
